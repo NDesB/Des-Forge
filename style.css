@@ -22,6 +22,12 @@ header {
     align-items: center;
     color: white;
     background-color: #191919;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.navbar h1 {
+    margin: 0;
 }
 
 .navbar a {
@@ -118,17 +124,18 @@ p {
 
     .navbar {
         flex-direction: column;
-        gap: 12px;
-        padding: 15px;
+        gap: 10px;
+        padding: 15px 10px;
     }
 
     .navbar h1 {
-        margin: 0 0 10px 0;
-        font-size: 28px;
+        text-align: center;
+        font-size: 24px;
     }
 
     .navbar a {
-        font-size: 17px;
+        font-size: 16px;
+        padding: 4px 0;
     }
 
     .title {
