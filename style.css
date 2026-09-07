@@ -5,11 +5,11 @@
 }
 
 body {
+    width: 100%;
+    margin: 0;
     font-family: Arial, sans-serif;
     color: white;
     background-color: #2d2d2d;
-    margin: 0;
-    width: 100%;
 }
 
 header {
@@ -20,16 +20,17 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    color: white;
-    background-color: #191919;
     margin: 0;
     padding: 10px 0;
+    color: white;
+    background-color: #191919;
 }
 
 .navbar a {
     text-decoration: none;
     font-size: 20px;
     color: white;
+    transition: color 0.3s;
 }
 
 .navbar a:hover {
@@ -51,9 +52,9 @@ p {
 .homepageimg {
     display: block;
     margin: auto;
+    height: auto;
     padding: 20px;
     max-width: 75%;
-    height: auto;
 }
 
 .homepagetitle {
@@ -64,29 +65,60 @@ p {
 
 .files {
     display: flex;
-    gap: 20px;
     flex-wrap: wrap;
+    gap: 50px;
 }
 
 .filebox {
+    display: block;
+    position: relative;
     text-decoration: none;
     width: 150px;
     height: 150px;
     border: 3px solid black;
+    border-radius: 20px;
     color: white;
     background-color: #2d2d2d;
+    overflow: hidden;
+    transition: border-color 0.3s;
 }
 
-.filebox img {
+.fileimage {
     width: 100%;
-    display: block;
+    height: 100%;
 }
 
 .filename {
-    padding: 10px;
+    position: absolute;
     text-align: center;
+    padding: 10px;
+    color: deeppink;
+    font-size: 20px;
+    font-weight: bold;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     opacity: 0;
     transition: opacity 0.3s;
+}
+
+.filebox:hover {
+    border-color: deeppink;
+}
+
+.filebox img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.fileimage img {
+    transition: filter 0.3s;
+}
+
+.filebox:hover .fileimage img {
+    filter: blur(5px);
 }
 
 .filebox:hover .filename {
@@ -104,15 +136,19 @@ p {
 .screenshots {
     display: block;
     margin: auto;
-    padding: 20px;
-    max-width: 100%;
     height: auto;
+    max-width: 100%;
+    padding: 20px;
 }
 
 .downloadlink {
     display: block;
     text-align: center;
     font-size: 20px;
+    transition: color 0.3s;
+}
+
+.downloadlink:hover {
     color: deeppink;
 }
 
@@ -124,8 +160,8 @@ p {
 
     .navbar {
         flex-direction: column;
-        gap: 10px;
         padding: 15px 10px;
+        gap: 10px;
     }
 
     .navbar h1 {
